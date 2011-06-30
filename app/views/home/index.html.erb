@@ -1,10 +1,19 @@
 <div id="project_URL">
     <h3>Copy/Paste DonorsChoose.org Project URL</h3>
-    <input id="txtProjURL" name="txtProjURL" value="http://www.donorschoose.org/donors/proposal.html?id=######" />
+    <input type="text" id="projURL" name="txtProjURL" value="http://www.donorschoose.org/donors/proposal.html?id=######" />
+    <input type="submit" id="projSubmit" value="OKGO" />
 </div>
 
 <div id="project_QR">
-    <img id="imgProjQR" src="" width="250" height="250" />
+    <img id="projQR" src="" width="250" height="250" />
+</div>
+
+<div id="project_info">
+    <span id="projTitle"></span>
+    <span id="projSchool"></span>
+    <span id="projCity"></span>, <span id="projState"></span>
+    <img id="projImage" src="" />
+    <span id="projDesc"></span>
 </div>
 
 <% content_for :header do %>Which Project Do You Want to Support?<% end %>
