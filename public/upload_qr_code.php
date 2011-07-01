@@ -77,7 +77,7 @@ function upload_image($ut, $qr) {
     $temp = fopen($filename, "w");
     fwrite($temp, $raw);
     
-    $full_path = realpath($temp . $filename);
+    $full_path = realpath($filename);
     
     $postData['cpFile1'] = "@".$full_path;
     
