@@ -4,6 +4,7 @@ body {
     padding:0px;
     margin:0px;
     font-size:10pt;
+    font-family:'Comic Sans MS', sans-serif;
 }
 
 html, body, #container { height: 100%; }
@@ -55,8 +56,13 @@ h1 {
 
 #header {
     margin-bottom: -5em;
-    height: 5em;
+    height: 4em;
     padding-top:10px;
+}
+
+#header img {
+    margin-bottom:-10px;
+    margin-right:10px;
 }
 
 #footer {
@@ -162,4 +168,16 @@ h4{
 #prodImage {
     margin-top:10px;
     margin-left:5px;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    background:transparent;
+    border:0px;
+}
+
+#btnNext {
+    width:285px;
+    height:30px;
+    margin-left:15px;
+    float:left;
 }
