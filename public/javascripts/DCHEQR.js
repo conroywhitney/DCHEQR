@@ -28,7 +28,7 @@ function displayQR(response) {
 
     // Upload to CafePress
     var qr_code = bitly_url.substr(14);
-    //console.log("qr_code [" + qr_code + "]");
+    console.log("qr_code [" + qr_code + "]");
 
     $.get("/upload/qr/" + qr_code, displaySchwag);
 }
