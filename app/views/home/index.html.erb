@@ -1,12 +1,20 @@
 <div id="accordion" class="white-box">
 
-    <h3><a href="#">Step #1 - Copy/Paste DonorsChoose.org Project URL</a></h3>
+    <h3><a href="#">Step #1 - Find a Project on DonorsChoose.org</a></h3>
+    <div id="find_project" class="white-square">
+        Ten years ago, a teacher in the Bronx launched DonorsChoose.org. Since then, more than 165,000 teachers at 43,000 public schools have posted over 300,000 classroom project requests, inspiring $80,000,000 in giving from 400,000 donors who performed over a million search queries and made more than a million donations.
+        <br />
+        <br />
+        <a id="visit" href="http://www.donorschoose.org/donors/search.html" target="_blank">Visit DonorsChoose.org to find a project to contribute to &raquo;</a>
+    </div>
+
+    <h3><a href="#">Step #2 - Copy/Paste DonorsChoose.org Project URL</a></h3>
     <div id="project_URL" class="white-square">
         <input type="text" id="projURL" name="txtProjURL" value="http://www.donorschoose.org/donors/proposal.html?id=######" />
         <input type="submit" id="projSubmit" value="Load Project" />
     </div>
 
-    <h3><a href="#">Step #2 - Double-Check Project & Barcode</a></h3>
+    <h3><a href="#">Step #3 - Double-Check Project & Barcode</a></h3>
     <div id="projectDetails" class="white-square">
         <div id="project_info">
             <h4><span id="projTitle"></span></h4>
@@ -17,14 +25,18 @@
 
         <!--<input type="submit" id="btnNext" value="Looks Good!" />-->
 
-        <div id="projDesc"></div>
+        <div id="middle">
+            <div id="projDesc"></div>
+
+            <input type="submit" id="btnNext" value="Get Schwag for This Project &raquo;" />
+        </div>
 
         <div id="project_QR">
             <img id="projQR" src="" width="250" height="250" />
         </div>
     </div>
 
-    <h3><a href="#">Step #3 - Choose Cool Schwag to Show Off Your Project</a></h3>
+    <h3><a href="#">Step #4 - Choose Cool Schwag to Show Off Your Project</a></h3>
     <div id="products" class="white-square">
         <div class="product white-box">
             <a id="prodURL" href="#" target="_blank">

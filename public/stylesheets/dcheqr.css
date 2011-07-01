@@ -131,6 +131,11 @@ h1 {
     font-size:10pt;
     text-align:left;
     padding:10px;
+}
+
+#middle {
+    float:left;
+    width:285px;
     margin-left:25px;
 }
 
@@ -176,7 +181,7 @@ h4{
 }
 
 #btnNext {
-    width:285px;
+    width:280px;
     height:30px;
     margin-left:15px;
     float:left;

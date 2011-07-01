@@ -47,8 +47,16 @@ function displayProject(response) {
         $("#projState").html(project.state);
     }
 
-    $('#accordion').accordion('activate', 1);
+    $('#accordion').accordion('activate', 2);
 }
+
+$("#visit").click(function() {
+    $('#accordion').accordion('activate', 1);
+});
+
+$("#btnNext").click(function() {
+    $('#accordion').accordion('activate', 3);
+});
 
 function displaySchwag(response) {
     //console.log(response);
