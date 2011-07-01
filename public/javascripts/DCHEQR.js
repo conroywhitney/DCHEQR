@@ -46,6 +46,8 @@ function displayProject(response) {
         $("#projCity").html(project.city);
         $("#projState").html(project.state);
     }
+
+    $('#accordion').accordion('activate', 1);
 }
 
 function displaySchwag(response) {
@@ -56,3 +58,9 @@ function displaySchwag(response) {
     $("#prodPrice").html(product.price);
     $("#prodURL").attr("href", product.url);
 }
+
+$(document).ready(function(){
+    $("#accordion").accordion({
+        autoHeight: false
+    });
+});

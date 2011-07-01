@@ -1,30 +1,39 @@
-<div id="project_URL">
-    <h3>Copy/Paste DonorsChoose.org Project URL</h3>
-    <input type="text" id="projURL" name="txtProjURL" value="http://www.donorschoose.org/donors/proposal.html?id=######" />
-    <input type="submit" id="projSubmit" value="OKGO" />
-</div>
+<div id="accordion" class="white-box">
 
-<div id="project_QR">
-    <img id="projQR" src="" width="250" height="250" />
-</div>
+    <h3><a href="#">Step #1 - Copy/Paste DonorsChoose.org Project URL</a></h3>
+    <div id="project_URL" class="white-square">
+        <input type="text" id="projURL" name="txtProjURL" value="http://www.donorschoose.org/donors/proposal.html?id=######" />
+        <input type="submit" id="projSubmit" value="Load Project" />
+    </div>
 
-<div id="project_info">
-    <span id="projTitle"></span>
-    <span id="projSchool"></span>
-    <span id="projCity"></span>, <span id="projState"></span>
-    <img id="projImage" src="" />
-    <span id="projDesc"></span>
-</div>
+    <h3><a href="#">Step #2 - Double-Check Project & Barcode</a></h3>
+    <div id="projectDetails" class="white-square">
+        <div id="project_info">
+            <h4><span id="projTitle"></span></h4>
+            <span id="projSchool"></span> in <span id="projCity"></span>, <span id="projState"></span>
+        </div>
 
-<div id="products">
-    <div class="product">
-        <a id="prodURL" href="#">
-            <span id="prodName"></span>
-            <span id="prodPrice"></span>
-            <img id="prodImage" src=""></img>
-        </a>
+        <img id="projImage" src="" />
+
+        <div id="projDesc"></div>
+
+        <div id="project_QR">
+            <img id="projQR" src="" width="250" height="250" />
+        </div>
+    </div>
+
+    <h3><a href="#">Step #3 - Choose Cool Schwag to Show Off Your Project</a></h3>
+    <div id="products" class="white-square">
+        <div class="product white-box">
+            <a id="prodURL" href="#" target="_blank">
+                <div class="prodDetails">
+                    <span id="prodName"></span>
+                    ($<span id="prodPrice"></span>)
+                </div>
+                <img id="prodImage" src=""></img>
+            </a>
+        </div>
     </div>
 </div>
 
-<% content_for :header do %>Which Project Do You Want to Support?<% end %>
 <%= javascript_include_tag "DCHEQR" %>
