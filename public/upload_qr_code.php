@@ -6,7 +6,7 @@
 include("xml2array.php");
 
 $API_KEY = "";
-$EMAIL = "";
+$EMAIL = "@gmail.com";
 $STORE_NAME = "";
 $PASSWORD = "";
 
@@ -168,10 +168,11 @@ function create_product($ut,$design_id){
 
 // Thats really it. Let me know if I left something out...
 
-$qr = $_GET["qr"];
+$qr = $_REQUEST["qr"];
 
 $ut = get_userToken();
 $image_id = upload_image($ut, $qr);
+//$image_id = "56904926";
 set_tags($ut, $image_id, $null);
 $product_info = create_product($ut, $image_id);
 $prod_arr = xml2array($product_info);
@@ -184,7 +185,4 @@ $image = $prod["defaultProductUri"];
 $url = $prod["storeUri"];
 
 ?>
-
-{"products": [
-    { "id":"<?= $id; ?>", "name":"<?= $name; ?>", "price":"<?= $price; ?>", "image":"<?= $image; ?>", "url":"<?= $url; ?>" }
-]}
+{ "id":"<?= $id; ?>", "name":"<?= $name; ?>", "price":"<?= $price; ?>", "image":"<?= $image; ?>", "url":"<?= $url; ?>" }

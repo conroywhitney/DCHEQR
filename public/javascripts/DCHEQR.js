@@ -23,12 +23,20 @@ $("#projSubmit").click(function() {
 
 function displayQR(response) {
     // TODO: check that bitly response matches what we would expect
-    $("#projQR").attr("src", response + ".qrcode");
+    var bitly_url = jQuery.trim(response) + ".qrcode";
+    $("#projQR").attr("src", bitly_url);
+
+    // Upload to CafePress
+    var qr_code = bitly_url.substr(14);
+    //console.log("qr_code [" + qr_code + "]");
+
+    $.get("/upload/qr/" + qr_code, displaySchwag);
 }
 
 function displayProject(response) {
     // TODO: check that response is correct
     // TODO: check that has proposal
+    //console.log(response);
     var project = response.proposals[0];
     if (project) {
         $("#projImage").attr("src", project.imageURL);
@@ -38,4 +46,13 @@ function displayProject(response) {
         $("#projCity").html(project.city);
         $("#projState").html(project.state);
     }
+}
+
+function displaySchwag(response) {
+    //console.log(response);
+    var product = jQuery.parseJSON(response);
+    $("#prodImage").attr("src", product.image);
+    $("#prodName").html(product.name);
+    $("#prodPrice").html(product.price);
+    $("#prodURL").attr("href", product.url);
 }
