@@ -1,5 +1,8 @@
 <?php
 
+/* Original code from http://developer.cafepress.com/forum/read/48557 */
+/* Code modified by konreu 2011/06/30 */
+
 include("xml2array.php");
 
 $API_KEY = "";
@@ -58,7 +61,7 @@ function get_userToken() {
 
 // Next I take the user token and the application key to upload the images to cafe press
 
-function upload_image($ut,$path) {
+function upload_image($ut, $qr) {
     global $API_KEY;
 
     $postData = array();
@@ -68,7 +71,15 @@ function upload_image($ut,$path) {
     
     $uploadUrl = "http://upload.cafepress.com/image.upload.cp";
 
-    $postData['cpFile1'] = "@".realpath($path);
+    $qr_url = "http://bit.ly/" . $qr;
+    $raw = file_get_contents($qr_url);
+    $filename = $qr . ".png";
+    $temp = fopen($filename, "w");
+    fwrite($temp, $raw);
+    
+    $full_path = realpath($temp . $filename);
+    
+    $postData['cpFile1'] = "@".$full_path;
     
     //print_r($postData);
     
@@ -84,6 +95,9 @@ function upload_image($ut,$path) {
     //print_r($response);
     
     curl_close($ch);
+    
+    fclose($temp); // this removes the file
+    unset($temp);
     
     $arr = xml2array($response);
     return $arr['values']['value']; //this is the image id
@@ -154,9 +168,10 @@ function create_product($ut,$design_id){
 
 // Thats really it. Let me know if I left something out...
 
+$qr = $_GET["qr"];
+
 $ut = get_userToken();
-$image_id = upload_image($ut, "");
-//$image_id = "56904926";
+$image_id = upload_image($ut, $qr);
 set_tags($ut, $image_id, $null);
 $product_info = create_product($ut, $image_id);
 $prod_arr = xml2array($product_info);
